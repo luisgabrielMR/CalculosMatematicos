@@ -9,7 +9,7 @@ public class PasswordUtilities {
 		 String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 		 String numbersCase = "0123456789";
 		 String symbolsCase = "!@#$%^&*_=+-/";
-		 String allCases = upperCaseLetters + lowerCaseLetters + numbersCase + symbolsCase;
+		 String allCases = "";
 		 int countCases = 0;
 		 
 		 StringBuilder password = new StringBuilder();
@@ -18,18 +18,22 @@ public class PasswordUtilities {
 		 if (upper) {
 			 password.append(getRandomChar(upperCaseLetters));
 			 countCases ++;
+			 allCases += upperCaseLetters;
 		 }
 		 if (lower) {
 			 password.append(getRandomChar(lowerCaseLetters));
 			 countCases ++;
+			 allCases += lowerCaseLetters;
 		 }
 		 if (number) {
 			 password.append(getRandomChar(numbersCase));
 			 countCases ++;
+			 allCases += numbersCase;
 		 }
 		 if (symbol) {
 			 password.append(getRandomChar(symbolsCase));
 			 countCases ++;
+			 allCases += symbolsCase;
 		 }
 		 for (int i = 4 - countCases; i < size; i++) {
 			 password.append(getRandomChar(allCases));
