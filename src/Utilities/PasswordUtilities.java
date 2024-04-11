@@ -10,23 +10,28 @@ public class PasswordUtilities {
 		 String numbersCase = "0123456789";
 		 String symbolsCase = "!@#$%^&*_=+-/";
 		 String allCases = upperCaseLetters + lowerCaseLetters + numbersCase + symbolsCase;
+		 int countCases = 0;
 		 
 		 StringBuilder password = new StringBuilder();
 		 
 		 
 		 if (upper) {
 			 password.append(getRandomChar(upperCaseLetters));
+			 countCases ++;
 		 }
 		 if (lower) {
 			 password.append(getRandomChar(lowerCaseLetters));
+			 countCases ++;
 		 }
 		 if (number) {
 			 password.append(getRandomChar(numbersCase));
+			 countCases ++;
 		 }
 		 if (symbol) {
 			 password.append(getRandomChar(symbolsCase));
+			 countCases ++;
 		 }
-		 for (int i = 4; i < size; i++) {
+		 for (int i = 4 - countCases; i < size; i++) {
 			 password.append(getRandomChar(allCases));
 		 }
 
