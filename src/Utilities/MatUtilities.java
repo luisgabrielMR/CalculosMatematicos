@@ -1,5 +1,8 @@
 package Utilities;
 
+import java.security.SecureRandom;
+import java.util.Random;
+
 public class MatUtilities {
 	
 	public static double ApplyDiscValor(double a, double b){
@@ -39,14 +42,5 @@ public class MatUtilities {
 	public static double ThreeRule(double a, double b, double r1) {
 
 		return (r1*b)/a;
-	}
-	
-	public static String KeyGenerator(int size, boolean upper, boolean lower, boolean number, boolean simble) {
-		 String upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		 String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
-		 String numbersCase = "0123456789";
-		 String simbolsCase = "!@#$%^&*_=+-/";
-		 
-		return "";
 	}
 }
