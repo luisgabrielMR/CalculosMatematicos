@@ -1,0 +1,23 @@
+Aplicar desconto % em um valor: ApplyDiscValor()
+V = a - (a * (b / 100))
+
+Incrementar % a um valor: IncrementPercVal()
+V = a + (a * (b/100))
+
+Amostragem - Quanto X% representa de Y: SamplingOne()
+v = (a * b) / 100
+
+Amostragem 2 - Quanto X representa de Y: SamplingTwo()
+V = (b * 100) / a
+
+Valor era A e paguei B, qual foi o desconto%? ValueDiscWas()
+V = ((a - b) / a) * 100
+
+Variação Delta(%) - diferença % entre valores; DeltaVariation()
+V = 100 - ((b * 100) / a)
+
+Qual o valor original? OriginalValue()
+V = (a * 100 / (100 - b))
+
+Regra de três
+r2 = (r1 * b) / a
