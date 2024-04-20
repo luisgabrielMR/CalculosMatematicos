@@ -31,7 +31,7 @@ public class MatFront extends JFrame{
 	}
 	
 	//Criando componentes
-	private void createComponents() {
+	private void createComponents() {	
 		lbInicio = new JLabel("Olá usuário (=^w^=)");
 		lbInicio.setFont(new Font(Font.MONOSPACED, Font.BOLD, 20));
 		lbInicio.setBounds(400, 20, 300, 25);
@@ -46,7 +46,8 @@ public class MatFront extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				DescontoPercFront d = new DescontoPercFront();
+				d.setVisible(true);
 			}
 		});
 		btnDescontoPerc.setBounds(50, 120, 900, 50);
@@ -57,7 +58,8 @@ public class MatFront extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				IncrementoPercFront i = new IncrementoPercFront();
+				i.setVisible(true);
 			}
 		});
 		btnIncrementoPerc.setBounds(50, 180, 900, 50);
@@ -68,7 +70,8 @@ public class MatFront extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				AmostraXPercYFront a = new AmostraXPercYFront();
+				a.setVisible(true);
 			}
 		});
 		btnAmostraXPercY.setBounds(50, 240, 900, 50);
@@ -79,7 +82,8 @@ public class MatFront extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				AmostraXYFront a = new AmostraXYFront();
+				a.setVisible(true);
 			}
 		});
 		btnAmostraXY.setBounds(50, 300, 900, 50);
@@ -90,7 +94,8 @@ public class MatFront extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				DescontoABFront d = new DescontoABFront();
+				d.setVisible(true);
 			}
 		});
 		btnDescontoAB.setBounds(50, 360, 900, 50);
@@ -101,7 +106,8 @@ public class MatFront extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				VariacaoDeltaFront v = new VariacaoDeltaFront();
+				v.setVisible(true);
 			}
 		});
 		btnVariacaoDelta.setBounds(50, 420, 900, 50);
@@ -112,7 +118,8 @@ public class MatFront extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				ValorOriginalFront v = new ValorOriginalFront();
+				v.setVisible(true);
 			}
 		});
 		btnValorOriginal.setBounds(50, 480, 900, 50);
@@ -123,7 +130,8 @@ public class MatFront extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				RegraDeTresFront r = new RegraDeTresFront();
+				r.setVisible(true);
 			}
 		});
 		btnRegraDeTres.setBounds(50, 540, 900, 50);
@@ -134,7 +142,8 @@ public class MatFront extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				GeradorSenhaFront g = new GeradorSenhaFront();
+				g.setVisible(true);
 			}
 		});
 		btnGeradorSenha.setBounds(50, 600, 900, 50);
