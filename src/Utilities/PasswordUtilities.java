@@ -2,6 +2,8 @@ package Utilities;
 
 import java.security.SecureRandom;
 
+import javax.swing.JOptionPane;
+
 public class PasswordUtilities {
 	//Esse processo todo é responsável por criar a senha aleatória;
 	public static String KeyGenerator(int size, boolean upper, boolean lower, boolean number, boolean symbol) { 
@@ -13,6 +15,7 @@ public class PasswordUtilities {
 		 String numbersCase = "0123456789";
 		 String symbolsCase = "!@#$%^&*_=+-/";
 		 String allCases = "";
+		 String FinalKey = "";
 		 int countCases = 0;
 		 //Aqui declaramos a váriavel da senha como stringbuilder, que permite aumentar o tamanho dela quanto necessário
 		 StringBuilder password = new StringBuilder();
@@ -40,13 +43,22 @@ public class PasswordUtilities {
 			 countCases ++;
 			 allCases += symbolsCase;
 		 }
-		 //Depois de gerar os números obrigatórios de acordo com o informado pelo usuário, ele vai passar por um loop, que começa
-		 //a partir do número minimo de caracteres (4) - o numero de caracteres já informado até o tamanho digitado pelo usuário
-		 //Nesse loop ele adicionara o restante dos caracteres necessários para fechar a numeração total.
-		 for (int i = 4 - countCases; i < size; i++) {
-			 password.append(getRandomChar(allCases));
+		 if(ValidationClass.KeyGeneratorOneCheckValidation(countCases)) {
+			 JOptionPane.showMessageDialog(null, "Selecione ao menos uma opção.\nSelecione novamente!");
+		 }else if (ValidationClass.KeyGeneratorSizeValidation(size, countCases)) {
+			 JOptionPane.showMessageDialog(null, "O tamanho da senha deve ter no minimo o tamanho de opções selecionadas.\nSelecione novamente!");
+		 }else {
+		 
+			 //Depois de gerar os números obrigatórios de acordo com o informado pelo usuário, ele vai passar por um loop, que começa
+			 //a partir do número minimo de caracteres (4) - o numero de caracteres já informado até o tamanho digitado pelo usuário
+			 //Nesse loop ele adicionara o restante dos caracteres necessários para fechar a numeração total.
+			 for (int i = 4 - countCases; i < size; i++) {
+				 password.append(getRandomChar(allCases));
+			 }
+		 
+			 FinalKey = suffleString(password.toString());
 		 }
-		return suffleString(password.toString()); //Aqui temos mais uma função criada com função de embaralhar a senha final.
+		 return FinalKey; //Aqui temos mais uma função criada com função de embaralhar a senha final.	
 	}
 	private static char getRandomChar(String Char) {	//Essa função é a responsável por chamar um caractere aleatório a partir da
 		SecureRandom random = new SecureRandom();		//string passado na função. Primeiro importamos a biblioteca random.
