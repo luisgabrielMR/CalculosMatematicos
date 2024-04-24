@@ -77,7 +77,7 @@ public class MatFront extends JFrame{
 		btnAmostraXPercY.setBounds(50, 240, 900, 50);
 		getContentPane().add(btnAmostraXPercY);
 		
-		btnAmostraXY = new JButton(new AbstractAction("Amostragem 2 - Qunato X representa de Y") {
+		btnAmostraXY = new JButton(new AbstractAction("Amostragem 2 - Quanto X representa de Y") {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
