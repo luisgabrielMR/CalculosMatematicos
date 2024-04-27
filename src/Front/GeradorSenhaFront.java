@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
-
+import Utilities.PasswordUtilities;
 public class GeradorSenhaFront extends JFrame{
 	private JLabel lbMaiuscula;
 	private JLabel lbMinuscula;
@@ -85,7 +85,16 @@ public class GeradorSenhaFront extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				Object ObjTamanho = spTamanho.getValue();
+				int Tamanho = Integer.parseInt(ObjTamanho.toString());
+		        boolean BLMaiuscula = cbMaiuscula.isSelected();
+		        boolean BLMinuscula = cbMinuscula.isSelected();
+		        boolean BLNumeros = cbNumeros.isSelected();
+		        boolean BLSimbolos = cbSimbolos.isSelected();
+
+				txtSenha.setText(PasswordUtilities.KeyGenerator(Tamanho, BLMaiuscula, BLMinuscula, BLNumeros, BLSimbolos));
+
+				
 				
 			}
 		});
