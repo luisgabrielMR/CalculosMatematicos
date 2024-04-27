@@ -4,6 +4,7 @@ import java.security.SecureRandom;
 
 import javax.swing.JOptionPane;
 
+import javax.swing.text.Utilities;
 public class PasswordUtilities {
 	//Esse processo todo é responsável por criar a senha aleatória;
 	public static String KeyGenerator(int size, boolean upper, boolean lower, boolean number, boolean symbol) { 
