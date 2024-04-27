@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import Utilities.MatUtilities;
+
 public class AmostraXPercYFront extends JFrame{
 	private JLabel lbValorA;
     private JLabel lbValorB;
@@ -55,7 +57,12 @@ public class AmostraXPercYFront extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				//Transforma o valor de string em double
+				double valorA = Double.parseDouble(txtValorA.getText());
+				double valorB = Double.parseDouble(txtValorB.getText());
+				
+				txtResultado.setText("" + MatUtilities.SamplingOne(valorA, valorB));
+
 				
 			}
 		});

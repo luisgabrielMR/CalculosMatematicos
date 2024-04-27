@@ -1,12 +1,15 @@
 package Front;
 
 import java.awt.event.ActionEvent;
+import java.text.DecimalFormat;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import Utilities.MatUtilities;
 
 public class AmostraXYFront extends JFrame{
 	private JLabel lbValorA;
@@ -27,7 +30,7 @@ public class AmostraXYFront extends JFrame{
 	}
 	
 	private void createComponents() {
-		lbValorA = new JLabel("Total (a)");
+		lbValorA = new JLabel("Total (X)");
 		lbValorA.setBounds(70, 20, 200, 20);
 		getContentPane().add(lbValorA);
 		
@@ -35,7 +38,7 @@ public class AmostraXYFront extends JFrame{
 		txtValorA.setBounds(130, 20, 200, 20);
 		getContentPane().add(txtValorA);
 		
-		lbValorB = new JLabel("Parte (b)");
+		lbValorB = new JLabel("Parte (Y)");
 		lbValorB.setBounds(70, 50, 200, 20);
 		getContentPane().add(lbValorB);
 		
@@ -43,7 +46,7 @@ public class AmostraXYFront extends JFrame{
 		txtValorB.setBounds(130, 50, 200, 20);
 		getContentPane().add(txtValorB);
 		
-		lbResultado = new JLabel("Corresponde a %");
+		lbResultado = new JLabel("Corresponde a");
 		lbResultado.setBounds(180, 160, 200, 20);
 		getContentPane().add(lbResultado);
 		
@@ -55,7 +58,19 @@ public class AmostraXYFront extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				//Transforma o valor de string em double
+				double valorA = Double.parseDouble(txtValorA.getText());
+				double valorB = Double.parseDouble(txtValorB.getText());
+				
+				double resultado = MatUtilities.SamplingTwo(valorA, valorB);
+
+		        // Definindo o formato para duas casas decimais
+		        DecimalFormat df = new DecimalFormat("#.##");
+		        
+		        String resultadoFormatado = df.format(resultado);
+				
+		        txtResultado.setText(""+resultadoFormatado+"%");
+
 				
 			}
 		});
