@@ -1,5 +1,7 @@
 package Utilities;
 
+import java.text.DecimalFormat;
+
 public class MatUtilities {
 	public static double ApplyDiscValor(double a, double b){
 		//Aplicar desconto % em um valor:
@@ -9,6 +11,7 @@ public class MatUtilities {
 	public static double IncrementPercVal(double a, double b) {
 		//Incrementar % a um valor:
 		//Classe utilitária de validação criada;BbiggerthanHundred
+		//Vitinho comentarios - Acredito que possa ter valor maior que 100 sim
 		return a + (a*(b/100));
 	}
 	public static double SamplingOne(double a, double b) {
@@ -40,5 +43,15 @@ public class MatUtilities {
 		//Regra de Três;
 		//A princípio r1 não pode ser maior do que 100, já ue vai representar a %
 		return (r1*b)/a;
+	}
+	
+	public static String CasasDecimais(double resultado) {
+	
+		DecimalFormat df = new DecimalFormat("#.##");
+
+		String resultadoFormatado = df.format(resultado);
+		
+		return resultadoFormatado;
+		// Teste de utilitário pra definir a quantidade de decimais
 	}
 }

@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import Utilities.MatUtilities;
+
 public class RegraDeTresFront extends JFrame{
 	private JLabel lbValorA;
     private JLabel lbValorB;
@@ -61,6 +63,7 @@ public class RegraDeTresFront extends JFrame{
 		
 		txtR2 = new JTextField();
 		txtR2.setBounds(280, 50, 200, 20);
+		txtR2.setEditable(false);
 		getContentPane().add(txtR2);
 		
 		lbResultado = new JLabel("Resultado");
@@ -75,8 +78,16 @@ public class RegraDeTresFront extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				//Transforma o valor de string em double
+				double valorA = Double.parseDouble(txtValorA.getText());
+				double valorB = Double.parseDouble(txtValorB.getText());				
+				double valorR1 = Double.parseDouble(txtR1.getText());
 				
+				double resultado = MatUtilities.ThreeRule(valorA, valorB, valorR1);
+				txtResultado.setText(MatUtilities.CasasDecimais(resultado));
+
+
+
 			}
 		});
 		btnResult.setBounds(130, 90, 200, 20);
