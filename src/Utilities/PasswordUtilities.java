@@ -52,7 +52,8 @@ public class PasswordUtilities {
 			 //Depois de gerar os números obrigatórios de acordo com o informado pelo usuário, ele vai passar por um loop, que começa
 			 //a partir do número minimo de caracteres (4) - o numero de caracteres já informado até o tamanho digitado pelo usuário
 			 //Nesse loop ele adicionara o restante dos caracteres necessários para fechar a numeração total.
-			 for (int i = 4 - countCases; i < size; i++) {
+			
+			 for (int i = countCases; i < size; i++) {
 				 password.append(getRandomChar(allCases));
 			 }
 		 
